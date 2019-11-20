@@ -56,7 +56,7 @@ An HDRP scene that contains Book of the Dead assets has been created! It was act
 
 
 ## Week 10:
-This was the last week of the term, so I wanted to just clean this game up and get it looking all pretty before the holidays so that I wouldn't need to worry about this stuff as much next term. I finished implementing some post processing, similar to what Book of the Dead uses, and honestly the game looks quite nice. It still has a lot to go before it is in a beautiful state, but I managed to get some nice lighting, shadows and details going in our scene. I brought some more assets from Book of the Dead into our new HDRP game project, and got them all working in here. I also needed to create a new sky for our scene. This is due to using HDRP, our old sky no longer worked, so I had to figure out how to make a HDRP sky. There were 3 options for this, however I just stuck with the basic HDRP sky for now as there is no need for anything more advanced.
+This was the last week of the term, so I wanted to just clean this game up and get it looking all pretty before the holidays so that I wouldn't need to worry about this stuff as much next term. I finished implementing some post processing, similar to what Book of the Dead uses, and honestly the game looks quite nice. It still has a lot to go before it is in a beautiful state, but I managed to get some nice lighting, shadows and details going in our scene. I brought some more assets from Book of the Dead into our new HDRP game project, and got them all working in here. I also needed to create a new sky for our scene. This is due to using HDRP, our old sky no longer worked, so I had to figure out how to make a HDRP sky. There were 3 options for this, however I just stuck with the basic HDRI sky for now as there is no need for anything more advanced.
 
 ### Reflection:
 
@@ -70,24 +70,22 @@ This was the last week of the term, so I wanted to just clean this game up and g
 ## Week 11:
 
 
-
 ### Reflection:
 
 ## Week 12:
-
-
+Adon has requested a day/night cycle, so this week was about brainstorming how we want our day/night cycle to work, and how we are going to implement it. We decided that we want a more realistic styled day/night cycle, and we want the sky colour to react to the time of the day so I set out to create a basic 24 hour in game time. This didn't take much to do, we just created the basic variables for hours, minutes, seconds etc and this meant that our game had a proper 24 hour cycle and 365 days in a year. This meant we could have events trigger at different times of days, inlcuding the sky gradient change at the right time. So, instead of using the HDRI sky I was using before, we changed our sky to a gradient sky, and setup a script that controlled the colour shifts of the gradients at the different times of day. We used some placeholder colours, and got it worked at a basic level. This looked okay, but we knew it would look really good once we sorted the colours out, so I spent the rest of the week getting images off google of different parts of the day, and trying to recreate those using a gradient colour pallet. This didn't take too long, however I did now have enough time to implement these properly this week.
 
 ### Reflection:
 
 
 ## Week 13:
-
+The first thing I did this week was implement the colour gradients into the sky. I got them all added in at the right times, and it actually made the game look very pretty, especially in the morning when the sun first rises. I was very happy with what we had produced, and felt like it was close to being a pretty as the Book of the Dead scene. One problem we had was that our sun and moon game objects kept disappearing as they got higher in the sky, and this was due to our render distance not being far enough. Originally, I had the idea of adding a second camera to the player, which only rendered the sun and moon at a very high render distance, but decided to scrap that idea once I tried just increasing the game's render distance without any performance loss. This may need to change in the future, as our scene isn't very performance intensive anyway. The next stage in this development was to add some character animations to the players when the player is standing idle, and when they are possessing an animal. I managed to get some animations working pretty quickly, thanks to Nick who was working on a different part of the game development prject. He had just finished working with his animations, and was able to give me some quick pointers on how it all worked. I got some idle animations set up, and an animation that loops and looks all jittery when possessing, but Adon just wanted me to get a placeholder for the next people to work on this project to continue. We also learnt that we would be showcasing this game at a government game developer meetup at the DCC next week. So we knew we had to polish up the game before then, so it was back to just cleaning up any obvious bugs we had, such as things falling through the map, and camera clipping etc.
 
 ### Reflection:
 
 
 ## Week 14:
-
+Mitchell and I started this week off by merging our projects together again. This caused A LOT of issues, due to the HDRP changing so much of our scenes. This happened just 2 days before we had to go to the DCC town hall so it begand to get a bit stressful. We managed to get a lot of the stuff working again, but had to sacrifice a lot of the newer features to get a stable game for the meetup. Our performance on the game had completely gone out the door, but that did not matter for this showcase. Once the showcase was done, we worked on fixing these issues. Our performance issues were mainly down to there being too many cameras in the scene, that had been carried over from the merge and duplicated. That was an easy fix once we figured that out, along with a lot of the other missing features.
 
 ### Weekend:
 
@@ -96,14 +94,12 @@ This was the last week of the term, so I wanted to just clean this game up and g
 
 
 ## Week 15:
-
-
+Performance issues were the first important thing I worked on this week. I got my scene running at a solid 120fps again, and it even ran smoother than it did before we had our merge issues which was a bonus. This week, Adon and I decided that when possession, we should have some particles show up while possesssing. I took this a step further and decided to have a particle effect be in the shape of the animal I was posessing. This took a wee bit of learning on how to use the Unity particle system, but the results ended up looking really good! Currently it is a deer no matter what animal you possess, however this is an easy fix later on when we have more animals in the game. The particle animal is also stationary, as in, it doesnt animate with the player, however I have suggested a few plugins that could work, or I can look further into the particle system to try and make it work with the animal. Either way it looks good, and makes the posession look a lot more intersting.
 
 ### Reflection:
 
 
 ## Week 16:
-
-
+Final week! I decided to add a quick cloud system into the game, using the same particles I used for the intro scene last term. I made a basic layout for them, and got them all working in the scene. They still need a few more tweaks to make them look more realistic, however that should be an easy fix for the future. This week also consisted of Mitchell, Adon and I all merging our projects. Adon had been working on some sound design and an updated day/night cycle while Mitchell and I worked on more bugs, so it was time to bring it all together. We decided to stray away from the traditional method of merging through GitLab due to all of our problems in the past, and instead chose to merge locally. This took a couple of days to get it working properly, but the game is completely merged together with almost no new bugs! 
 
 ## Overall Reflection:
