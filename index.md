@@ -26,6 +26,8 @@ My first task of the week was to finish this HUD, as Adon really wanted it out o
 ### Reflection:
 This week I figured out the best way to have each individual user have their own UI elements, without them conflicting with other player's UI. This was very interesting to learn, and has given me plenty of ideas on how to implement other client side solutions in the future.
 
+![Image](Images/originalGame.png)
+
 ## Week: 5
 This week, I finished the pause menu by having all of the pause buttons do something. Currently, we have no settings menu, so the settings menu just unpauses the game, but that's an easy fix. I also added in the SKIN font. Just to top things off, I added a nice slide in animation for the pause menu to make it look a little more polished. Adon was not here to give any more things to do, and I had already finished everything he wanted done, plus a few extra bug fixes, so I decided to get started on an inventory system. I created a temporary circle menu, similar to that from other survival games, and got all the base code setup for that.
 
