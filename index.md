@@ -66,38 +66,37 @@ This week I learnt that a skybox is rendered completely differently in HDRP than
 Over the holidays, I had a Book of the Dead scene at home which I played around with to try and see if I could get any sort of Occlusion Probes to work in our game. I was unsuccessful unfortunately. However, I did learn a lot about how the Book of the Dead makes their scene so pretty. Their terrain by itself is very ugly, but it was a matter of how they places all of their assets that made the showcase look so amazing. This is something to keep in mind when building up our new scenes in HDRP.
 
 ## Week 11:
-
+First week back of the term, and I have been working on making a small scene. I have added in some large rocks and different types of trees and grass. The scene is not very well layed out, but it was to more to stress test the assets to see how well they run in our game. Performance was a big issue, but I figured out that the game was rendering our grass to the CPU rather than the GPU, so I was able to fix the performance and get the game running at a solid 100fps with dense forestry. 
 
 ### Reflection:
+I learnt a lot this week about game optimisation. I learnt that Unity quite often handles grass in the CPU by default, which can cause some serious performance issues, and it made me look into further performance tweaks.
 
 ## Week 12:
 Adon has requested a day/night cycle, so this week was about brainstorming how we want our day/night cycle to work, and how we are going to implement it. We decided that we want a more realistic styled day/night cycle, and we want the sky colour to react to the time of the day so I set out to create a basic 24 hour in game time. This didn't take much to do, we just created the basic variables for hours, minutes, seconds etc and this meant that our game had a proper 24 hour cycle and 365 days in a year. This meant we could have events trigger at different times of days, inlcuding the sky gradient change at the right time. So, instead of using the HDRI sky I was using before, we changed our sky to a gradient sky, and setup a script that controlled the colour shifts of the gradients at the different times of day. We used some placeholder colours, and got it worked at a basic level. This looked okay, but we knew it would look really good once we sorted the colours out, so I spent the rest of the week getting images off google of different parts of the day, and trying to recreate those using a gradient colour pallet. This didn't take too long, however I did now have enough time to implement these properly this week.
 
 ### Reflection:
-
+This week I learnt some good techniques on how to "fake" visuals in the game. Our sun is just a sphere game object that gives off light, and our sky just has some set colour values that it lerps (changes) between. However, when the game is running, the sky actually looks convincing as the day/night cycle goes on, even if the gradient colours are not yet set properly. 
 
 ## Week 13:
 The first thing I did this week was implement the colour gradients into the sky. I got them all added in at the right times, and it actually made the game look very pretty, especially in the morning when the sun first rises. I was very happy with what we had produced, and felt like it was close to being a pretty as the Book of the Dead scene. One problem we had was that our sun and moon game objects kept disappearing as they got higher in the sky, and this was due to our render distance not being far enough. Originally, I had the idea of adding a second camera to the player, which only rendered the sun and moon at a very high render distance, but decided to scrap that idea once I tried just increasing the game's render distance without any performance loss. This may need to change in the future, as our scene isn't very performance intensive anyway. The next stage in this development was to add some character animations to the players when the player is standing idle, and when they are possessing an animal. I managed to get some animations working pretty quickly, thanks to Nick who was working on a different part of the game development prject. He had just finished working with his animations, and was able to give me some quick pointers on how it all worked. I got some idle animations set up, and an animation that loops and looks all jittery when possessing, but Adon just wanted me to get a placeholder for the next people to work on this project to continue. We also learnt that we would be showcasing this game at a government game developer meetup at the DCC next week. So we knew we had to polish up the game before then, so it was back to just cleaning up any obvious bugs we had, such as things falling through the map, and camera clipping etc.
 
 ### Reflection:
-
+This week was all about bug fixing. I fixed most of the bugs that were obvious from things I had been making which was helpful. I also boosted our performance a bit more, which allowed me to boost our render distance up to a large number so we could see the sun and moon, while also being able to see a lot of distant detail.
 
 ## Week 14:
 Mitchell and I started this week off by merging our projects together again. This caused A LOT of issues, due to the HDRP changing so much of our scenes. This happened just 2 days before we had to go to the DCC town hall so it begand to get a bit stressful. We managed to get a lot of the stuff working again, but had to sacrifice a lot of the newer features to get a stable game for the meetup. Our performance on the game had completely gone out the door, but that did not matter for this showcase. Once the showcase was done, we worked on fixing these issues. Our performance issues were mainly down to there being too many cameras in the scene, that had been carried over from the merge and duplicated. That was an easy fix once we figured that out, along with a lot of the other missing features.
 
-### Weekend:
-
-
 ### Reflection:
-
+This week was an exciting week. We got to go to the DCC to show off our game. This event did not end up providing much feedback, but it was still a fun experience. I spent several hours each day this week working on this game at Polytech, and we got a lot done. I ended up spending upwards of 20 hours this week working on the game, trying to wash out some old bugs that have been causing issues.
 
 ## Week 15:
 Performance issues were the first important thing I worked on this week. I got my scene running at a solid 120fps again, and it even ran smoother than it did before we had our merge issues which was a bonus. This week, Adon and I decided that when possession, we should have some particles show up while possesssing. I took this a step further and decided to have a particle effect be in the shape of the animal I was posessing. This took a wee bit of learning on how to use the Unity particle system, but the results ended up looking really good! Currently it is a deer no matter what animal you possess, however this is an easy fix later on when we have more animals in the game. The particle animal is also stationary, as in, it doesnt animate with the player, however I have suggested a few plugins that could work, or I can look further into the particle system to try and make it work with the animal. Either way it looks good, and makes the posession look a lot more intersting.
 
 ### Reflection:
-
+This week I took what I learnt about the particle system in Unity, and began making my own particle effects. I managed to create a deer shape that fades in over the time it takes to possess an animal, and it looks pretty good.
 
 ## Week 16:
 Final week! I decided to add a quick cloud system into the game, using the same particles I used for the intro scene last term. I made a basic layout for them, and got them all working in the scene. They still need a few more tweaks to make them look more realistic, however that should be an easy fix for the future. This week also consisted of Mitchell, Adon and I all merging our projects. Adon had been working on some sound design and an updated day/night cycle while Mitchell and I worked on more bugs, so it was time to bring it all together. We decided to stray away from the traditional method of merging through GitLab due to all of our problems in the past, and instead chose to merge locally. This took a couple of days to get it working properly, but the game is completely merged together with almost no new bugs! 
 
 ## Overall Reflection:
+I have learnt a lot from this project
